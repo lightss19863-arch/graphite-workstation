@@ -2,7 +2,7 @@
 
 Local-first legal intelligence workstation for solo practitioners and small law firms. Built with **Tauri v2** (Rust backend), **React** (frontend), and **SQLCipher** (encrypted local storage).
 
-This is the public release repository. Source code for specific subsystems is available as standalone crates — see below.
+This is the public release repository. Source code for specific subsystems is available as standalone crates see below.
 
 **Download:** Check the [Releases](https://github.com/lightss19863-arch/graphite-workstation/releases) page for the latest Windows installer.
 
@@ -10,7 +10,7 @@ This is the public release repository. Source code for specific subsystems is av
 
 ## What it actually does
 
-Lawyers deal with sensitive client data — case strategy, witness statements, billing records. Most legal software either stores everything in someone else's cloud or has "encryption" that amounts to a password on a ZIP file.
+Lawyers deal with sensitive client data case strategy, witness statements, billing records. Most legal software either stores everything in someone else's cloud or has "encryption" that amounts to a password on a ZIP file.
 
 Graphite keeps everything local by default. The workspace database is encrypted with SQLCipher (AES-256), the encryption key lives in the OS credential store (never on disk), and the cloud runtime can propose document changes but physically cannot write to your canonical records.
 
@@ -56,7 +56,7 @@ The cloud has zero write authority to your local database. It can't even read it
 
 ### Keeping encryption keys out of the filesystem
 
-The SQLCipher encryption key can't just sit in a config file — that defeats the entire point. So it goes into Windows Credential Manager / macOS Keychain via the `keyring` crate. But I hit a fun bug early on where a Windows domain policy update caused Credential Manager to silently succeed on write but return garbage on read. Now every key store operation does a read-after-write verification.
+The SQLCipher encryption key can't just sit in a config file that defeats the entire point. So it goes into Windows Credential Manager / macOS Keychain via the `keyring` crate. But I hit a fun bug early on where a Windows domain policy update caused Credential Manager to silently succeed on write but return garbage on read. Now every key store operation does a read-after-write verification.
 
 The workspace identity system also needs to survive folder renames. Each workspace gets a UUID manifest, and the key is stored under that UUID rather than the folder path. Learned that lesson when a tester moved their workspace folder and got permanently locked out.
 
