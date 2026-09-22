@@ -1,0 +1,27 @@
+[package]
+name = "graphite-workstation-core"
+version = "0.1.0"
+edition = "2021"
+description = "Sanitized core architecture and security modules for Graphite Workstation"
+authors = ["Keshav Nagar <keshav@nyaya.cloud>"]
+license = "MIT"
+
+[lib]
+name = "graphite_workstation_core"
+path = "src/lib.rs"
+
+[[bin]]
+name = "graphite-workstation"
+path = "src/main.rs"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+hmac = "0.12"
+hex = "0.4"
+rand = "0.8"
+zeroize = { version = "1.8", features = ["derive"] }
+log = "0.4"
+
+[dev-dependencies]
