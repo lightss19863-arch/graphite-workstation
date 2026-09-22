@@ -1,0 +1,110 @@
+.workstation-status-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #0f141c;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  color: #e5e7eb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  width: 100%;
+  max-width: 340px;
+}
+
+.status-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #1f2937;
+  padding-bottom: 8px;
+}
+
+.status-title {
+  font-weight: 600;
+  font-size: 13px;
+  color: #f3f4f6;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: #1e293b;
+  color: #94a3b8;
+}
+
+.badge-hardware_sealed {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-indicators {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-label {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.status-val {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-encrypted {
+  color: #60a5fa;
+}
+
+.status-verified {
+  color: #34d399;
+}
+
+.outbox-telemetry {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #090d14;
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.outbox-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+}
+
+.outbox-label {
+  color: #6b7280;
+}
+
+.outbox-state {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: #fbbf24;
+  font-size: 11px;
+  background: rgba(251, 191, 36, 0.1);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.outbox-val {
+  font-weight: 600;
+  color: #d1d5db;
+}
